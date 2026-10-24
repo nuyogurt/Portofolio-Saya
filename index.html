@@ -1,129 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Iffatunnisa Aulia — Mathematics student at UIN Sunan Kalijaga. Portfolio, projects and contact." />
+    <meta name="theme-color" content="#05060f" />
+    <title>Ifa — Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet">
-    <link rel="shortcut icon" href="profil bumi.png">
-    <link rel="stylesheet" href="style.css">
-    <title>Ifa's Portfolio</title>
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="profil bumi.png" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <nav>
-      <div class="nav_content">
-        <input type="checkbox" name="check" id="check">
-        <label for="check" class="hamburger">
-          <i class="ri-menu-line"></i>
-        </label>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#project">Project</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Animated starfield (replaces the old background image) -->
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <div class="nebula" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="nav" id="nav">
+      <div class="nav_inner">
+        <a href="#home" class="brand">
+          <span class="brand_dot"></span>ifa<span class="brand_accent">.</span>
+        </a>
+
+        <nav class="nav_links" id="navLinks" aria-label="Main">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#project">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="btn btn-sm btn-primary nav_cta">Say hi <i class="ri-arrow-right-up-line"></i></a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </header>
 
-    <!-- HOME -->
-    <section>
-      <div id="home">
-        <div class="logo"><img src="astrinut.png"></div>
-        <div class="content">
-          <p class="subtitle">Welcome to</p>
-          <h1 class="title"><span>IFA'S PORTFOLIO</span></h1>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section>
-        <div id="about">
-          <div class="image">
-            <img src="profil bumi.png" alt="profile" />
-          </div>
-          <div class="content">
-            <p class="subtitle">About Me,</p>
-            <h1 class="title"><span>Ifa</span></h1>
-            <p class="description">
-                Hello! I’m Iffatunnisa Aulia from Tangerang, currently studying Mathematics at Sunan Kalijaga University.
-                I’m passionate about solving challenging mathematical problems and honing my analytical skills.
-                Beyond academics, I love playing the guitar for relaxation and creative expression.
-                <br><br>
-                Explore my portfolio and feel free to reach out for collaboration or inquiries!
-            </p>
-            <div class="action_btns">
-              <a href="#contact"><button class="hire_me">Contact Me</button></a>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <!-- PROJECT -->
-    <section>
-      <div id="project">
-        <div class="content">
-          <h2 class="title"><span>Projects</span></h2>
-          <p class="subtitle">Tap the planet!</p>
-          <div id="card">
-            <div id="card1">
-              <div class="cimg">
-                <img src="2.png" alt="Project 1">
-              </div>
-              <div class="info">
-                <h3 class="subtitle">Solar System</h3>
-                <p class="description">The tawaaf activities by eight planets 
-                  around the Sun.<br>
-                  <a href="https://lffatunnisa.github.io/Solar-System/">Click here</a> to join!
-                </p>
-              </div>
-            </div>
-            <div id="card2">
-              <div class="cimg">
-              <img src="5.png" alt="Project 2">
-              </div>
-              <div class="info">
-                <h3 class="subtitle">The 8 Planets</h3>
-                <p class="description">A simple project about eight planets
-                  in our solar system.<br>
-                  <a href="https://lffatunnisa.github.io/Planets/">Click here</a> to explore!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>                          
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section>
-      <div id="contact">
-        <div class="content">
-          <h2 class="title"><span>Contact</span></h2>
-          <p class="subtitle">Send me a message</p>
-          <p class="description">
-            If you are tired and interested in being Mercury, Venus, or other 
-            planets, you can send me a message from here. It's my pleasure to help.
+    <main>
+      <!-- HOME -->
+      <section id="home" class="hero">
+        <div class="hero_content">
+          <p class="eyebrow reveal"><span class="pulse"></span> Welcome to my universe</p>
+          <h1 class="hero_title reveal">
+            Hi, I'm <span class="gradient-text">Ifa</span>
+            <span class="hero_line">a <span class="typed" id="typed">Mathematics Student</span><span class="caret">|</span></span>
+          </h1>
+          <p class="hero_desc reveal">
+            I explore the beauty of numbers, solve challenging problems, and build small
+            things for the web — one planet at a time.
           </p>
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="b9d2a2a5-266f-432f-bc17-ea71ba95c121">
-            <div class="input-box">
-              <input name="text" type="text" placeholder="Enter your name" required>
+          <div class="hero_actions reveal">
+            <a href="#project" class="btn btn-primary">Explore Projects <i class="ri-rocket-2-line"></i></a>
+            <a href="#about" class="btn btn-ghost">About Me</a>
+          </div>
+          <ul class="socials reveal" aria-label="Social links">
+            <li><a href="https://github.com/nuyogurt" target="_blank" rel="noopener" aria-label="GitHub"><i class="ri-github-line"></i></a></li>
+            <li><a href="#contact" aria-label="Email"><i class="ri-mail-line"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="hero_visual reveal">
+          <div class="orbit orbit-1"><span class="moon"></span></div>
+          <div class="orbit orbit-2"><span class="moon moon-sm"></span></div>
+          <div class="orbit orbit-3"></div>
+          <div class="astronaut">
+            <img src="astrinut.png" alt="Astronaut illustration" data-fallback="astro" />
+          </div>
+        </div>
+
+        <a href="#about" class="scroll-hint" aria-label="Scroll to About">
+          <span class="mouse"><span class="wheel"></span></span>
+        </a>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="section_head reveal">
+          <span class="section_tag">01 — About</span>
+          <h2 class="section_title">Get to know <span class="gradient-text">me</span></h2>
+        </div>
+
+        <div class="about_grid">
+          <div class="about_photo reveal">
+            <div class="photo_ring"></div>
+            <div class="photo_frame">
+              <img src="profil bumi.png" alt="Ifa's profile" data-fallback="planet" />
             </div>
-            <div class="input-box">
-              <input name="email" type="email" placeholder="Enter your email" required>
+            <div class="floating-chip chip-a"><i class="ri-function-line"></i> f(x) lover</div>
+            <div class="floating-chip chip-b"><i class="ri-music-2-line"></i> Guitarist</div>
+          </div>
+
+          <div class="about_text">
+            <p class="lead reveal">
+              Hello! I'm <strong>Iffatunnisa Aulia</strong> from Tangerang, currently studying
+              <strong>Mathematics</strong> at Sunan Kalijaga University.
+            </p>
+            <p class="reveal">
+              I'm passionate about solving challenging mathematical problems and honing my
+              analytical skills. Beyond academics, I love playing the guitar for relaxation and
+              creative expression.
+            </p>
+            <p class="reveal">Explore my portfolio and feel free to reach out for collaboration or inquiries!</p>
+
+            <div class="info_cards">
+              <div class="info_card reveal">
+                <i class="ri-graduation-cap-line"></i>
+                <div><span>Study</span><strong>Mathematics</strong></div>
+              </div>
+              <div class="info_card reveal">
+                <i class="ri-building-4-line"></i>
+                <div><span>University</span><strong>UIN Sunan Kalijaga</strong></div>
+              </div>
+              <div class="info_card reveal">
+                <i class="ri-map-pin-2-line"></i>
+                <div><span>From</span><strong>Tangerang</strong></div>
+              </div>
             </div>
-            <div class="input-box message-box">
-              <textarea name="message" placeholder="Enter your message" required></textarea>
+
+            <div class="skills reveal">
+              <span>Problem Solving</span>
+              <span>Analytical Thinking</span>
+              <span>HTML &amp; CSS</span>
+              <span>JavaScript</span>
+              <span>Guitar</span>
             </div>
-            <div class="action_btns">              
-              <button class="hire_me" type="submit">Send</button>
-            </div>          
+
+            <a href="#contact" class="btn btn-primary reveal">Contact Me <i class="ri-send-plane-line"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="project" class="section">
+        <div class="section_head reveal">
+          <span class="section_tag">02 — Projects</span>
+          <h2 class="section_title">Things I've <span class="gradient-text">launched</span></h2>
+          <p class="section_sub">Hover a planet to feel its gravity.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project_card reveal" data-tilt>
+            <div class="project_planet">
+              <span class="planet_glow"></span>
+              <img src="2.png" alt="Solar System project" data-fallback="planet" />
+            </div>
+            <div class="project_body">
+              <span class="project_num">/01</span>
+              <h3>Solar System</h3>
+              <p>The <em>tawaaf</em> of eight planets around the Sun — an animated model of our solar system built with pure HTML &amp; CSS.</p>
+              <div class="tags"><span>HTML</span><span>CSS</span><span>Animation</span></div>
+              <a href="https://nuyogurt.github.io/Solar-System/" target="_blank" rel="noopener" class="project_link">
+                Join the orbit <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project_card reveal" data-tilt>
+            <div class="project_planet">
+              <span class="planet_glow glow-amber"></span>
+              <img src="5.png" alt="The 8 Planets project" data-fallback="planet-amber" />
+            </div>
+            <div class="project_body">
+              <span class="project_num">/02</span>
+              <h3>The 8 Planets</h3>
+              <p>A simple, friendly guide to the eight planets in our solar system — facts, visuals and a little curiosity.</p>
+              <div class="tags"><span>HTML</span><span>CSS</span><span>Responsive</span></div>
+              <a href="https://nuyogurt.github.io/Planets/" target="_blank" rel="noopener" class="project_link">
+                Explore planets <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project_card project_soon reveal">
+            <div class="soon_icon"><i class="ri-loader-4-line"></i></div>
+            <h3>Next mission</h3>
+            <p>Something new is being assembled on the launch pad. Stay tuned!</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="section_head reveal">
+          <span class="section_tag">03 — Contact</span>
+          <h2 class="section_title">Let's <span class="gradient-text">connect</span></h2>
+        </div>
+
+        <div class="contact_grid">
+          <div class="contact_info reveal">
+            <p class="lead">
+              Tired of orbiting alone? Whether you want to be Mercury, Venus, or any other planet —
+              send me a message. It's my pleasure to help.
+            </p>
+            <ul class="contact_list">
+              <li><i class="ri-map-pin-line"></i><div><span>Location</span><strong>Yogyakarta / Tangerang, ID</strong></div></li>
+              <li><i class="ri-time-line"></i><div><span>Response time</span><strong>Usually within 1–2 days</strong></div></li>
+              <li><i class="ri-github-line"></i><div><span>GitHub</span><a href="https://github.com/nuyogurt" target="_blank" rel="noopener">@nuyogurt</a></div></li>
+            </ul>
+          </div>
+
+          <form class="contact_form glass reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="43c5bd8c-a24b-4f31-b999-128c10feeec0" />
+            <input type="hidden" name="subject" value="New message from portfolio" />
+            <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+            <div class="field">
+              <input id="name" name="name" type="text" placeholder=" " required />
+              <label for="name">Your name</label>
+              <i class="ri-user-line"></i>
+            </div>
+            <div class="field">
+              <input id="email" name="email" type="email" placeholder=" " required />
+              <label for="email">Your email</label>
+              <i class="ri-at-line"></i>
+            </div>
+            <div class="field">
+              <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+              <label for="message">Your message</label>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit" id="submitBtn">
+              <span class="btn_label">Send message</span> <i class="ri-send-plane-2-line"></i>
+            </button>
+            <p class="form_status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Iffatunnisa Aulia · Made with <i class="ri-heart-3-fill"></i> &amp; a lot of stardust</p>
+      <a href="#home" class="to-top" id="toTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></a>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
