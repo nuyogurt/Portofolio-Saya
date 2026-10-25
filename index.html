@@ -13,7 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="profil bumi.png" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -77,8 +78,12 @@
           <div class="orbit orbit-1"><span class="moon"></span></div>
           <div class="orbit orbit-2"><span class="moon moon-sm"></span></div>
           <div class="orbit orbit-3"></div>
-          <div class="astronaut">
-            <img src="astrinut.png" alt="Astronaut illustration" data-fallback="astro" />
+          <div class="hero_planet">
+            <div class="big_planet" role="img" aria-label="Ringed planet illustration">
+              <span class="ring ring-back"></span>
+              <span class="planet_body"></span>
+              <span class="ring ring-front"></span>
+            </div>
           </div>
         </div>
 
@@ -98,10 +103,12 @@
           <div class="about_photo reveal">
             <div class="photo_ring"></div>
             <div class="photo_frame">
-              <img src="profil bumi.png" alt="Ifa's profile" data-fallback="planet" />
+              <div class="earth" role="img" aria-label="Earth illustration"></div>
             </div>
             <div class="floating-chip chip-a"><i class="ri-function-line"></i> f(x) lover</div>
             <div class="floating-chip chip-b"><i class="ri-music-2-line"></i> Guitarist</div>
+            <div class="floating-chip chip-c"><i class="ri-cake-3-line"></i> Home baker</div>
+            <div class="floating-chip chip-d"><i class="ri-riding-line"></i> Cyclist</div>
           </div>
 
           <div class="about_text">
@@ -112,7 +119,8 @@
             <p class="reveal">
               I'm passionate about solving challenging mathematical problems and honing my
               analytical skills. Beyond academics, I love playing the guitar for relaxation and
-              creative expression.
+              creative expression, baking something sweet in the kitchen, and going for a ride on
+              my bicycle to clear my head.
             </p>
             <p class="reveal">Explore my portfolio and feel free to reach out for collaboration or inquiries!</p>
 
@@ -136,7 +144,9 @@
               <span>Analytical Thinking</span>
               <span>HTML &amp; CSS</span>
               <span>JavaScript</span>
-              <span>Guitar</span>
+              <span><i class="ri-music-2-line"></i> Guitar</span>
+              <span><i class="ri-cake-3-line"></i> Baking</span>
+              <span><i class="ri-riding-line"></i> Cycling</span>
             </div>
 
             <a href="#contact" class="btn btn-primary reveal">Contact Me <i class="ri-send-plane-line"></i></a>
@@ -155,11 +165,27 @@
         <div class="projects">
           <article class="project_card reveal" data-tilt>
             <div class="project_planet">
-              <span class="planet_glow"></span>
-              <img src="2.png" alt="Solar System project" data-fallback="planet" />
+              <span class="planet_glow glow-teal"></span>
+              <div class="orb orb-teal"><i class="ri-compass-3-line"></i></div>
             </div>
             <div class="project_body">
               <span class="project_num">/01</span>
+              <h3>Qiblad</h3>
+              <p>A qibla direction calculator — enter your coordinates and get the qibla angle and azimuth using spherical trigonometry, complete with step-by-step working and a live compass.</p>
+              <div class="tags"><span>JavaScript</span><span>Spherical Trig</span><span>Geolocation</span></div>
+              <a href="https://nuyogurt.github.io/Qiblad/" target="_blank" rel="noopener" class="project_link">
+                Find the qibla <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project_card reveal" data-tilt>
+            <div class="project_planet">
+              <span class="planet_glow glow-amber"></span>
+              <div class="orb orb-sun"><i class="ri-sun-line"></i></div>
+            </div>
+            <div class="project_body">
+              <span class="project_num">/02</span>
               <h3>Solar System</h3>
               <p>The <em>tawaaf</em> of eight planets around the Sun — an animated model of our solar system built with pure HTML &amp; CSS.</p>
               <div class="tags"><span>HTML</span><span>CSS</span><span>Animation</span></div>
@@ -171,11 +197,11 @@
 
           <article class="project_card reveal" data-tilt>
             <div class="project_planet">
-              <span class="planet_glow glow-amber"></span>
-              <img src="5.png" alt="The 8 Planets project" data-fallback="planet-amber" />
+              <span class="planet_glow"></span>
+              <div class="orb orb-violet"><i class="ri-planet-line"></i></div>
             </div>
             <div class="project_body">
-              <span class="project_num">/02</span>
+              <span class="project_num">/03</span>
               <h3>The 8 Planets</h3>
               <p>A simple, friendly guide to the eight planets in our solar system — facts, visuals and a little curiosity.</p>
               <div class="tags"><span>HTML</span><span>CSS</span><span>Responsive</span></div>
@@ -185,10 +211,28 @@
             </div>
           </article>
 
+          <article class="project_card reveal" data-tilt>
+            <div class="project_planet">
+              <span class="planet_glow glow-gold"></span>
+              <div class="orb orb-gold"><i class="ri-copper-coin-line"></i></div>
+            </div>
+            <div class="project_body">
+              <span class="project_num">/04</span>
+              <h3>Coin Toss</h3>
+              <p>Heads or tails? Flip a Rp1.000 coin, set your own odds, and watch the statistics and flip history update in real time — probability you can play with.</p>
+              <div class="tags"><span>JavaScript</span><span>Probability</span><span>Animation</span></div>
+              <a href="https://nuyogurt.github.io/Coin-Toss/" target="_blank" rel="noopener" class="project_link">
+                Flip a coin <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </article>
+
           <article class="project_card project_soon reveal">
             <div class="soon_icon"><i class="ri-loader-4-line"></i></div>
-            <h3>Next mission</h3>
-            <p>Something new is being assembled on the launch pad. Stay tuned!</p>
+            <div>
+              <h3>Next mission</h3>
+              <p>Something new is being assembled on the launch pad. Stay tuned!</p>
+            </div>
           </article>
         </div>
       </section>

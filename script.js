@@ -164,7 +164,7 @@ document.querySelectorAll(".reveal").forEach((el) => {
 /* ---------- Typing effect ---------- */
 (function typing() {
   const el = document.getElementById("typed");
-  const words = ["Mathematics Student", "Problem Solver", "Guitar Enthusiast", "Web Explorer"];
+  const words = ["Mathematics Student", "Problem Solver", "Guitar Enthusiast", "Home Baker", "Cyclist", "Web Explorer"];
   if (reduceMotion) return;
   let wi = 0, ci = words[0].length, deleting = true;
 
@@ -203,23 +203,6 @@ if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
     });
   });
 }
-
-/* ---------- Image fallback (if a file is missing) ---------- */
-document.querySelectorAll("img[data-fallback]").forEach((img) => {
-  const swap = () => {
-    const type = img.dataset.fallback;
-    const div = document.createElement("div");
-    div.className = "img-fallback";
-    if (type === "planet-amber") div.classList.add("amber");
-    if (type === "astro") {
-      div.classList.add("astro");
-      div.textContent = "🪐";
-    }
-    img.replaceWith(div);
-  };
-  if (img.complete && img.naturalWidth === 0) swap();
-  else img.addEventListener("error", swap);
-});
 
 /* ---------- Contact form (AJAX via Web3Forms) ---------- */
 const form = document.getElementById("contactForm");
